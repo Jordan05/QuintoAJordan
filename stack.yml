@@ -2,7 +2,9 @@ version: '3.9'
 
 services:
   jordanapp:
-    image: ghcr.io/jordan05/quintoajordan:1.0.0
+    image: ghcr.io/jordan05/quintoajordan:1.0.1
+    ports:
+      - "5000:5000"    # expone tu app en http://IP_DEL_SERVIDOR:5000
     deploy:
       replicas: 1
       resources:

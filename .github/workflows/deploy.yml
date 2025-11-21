@@ -1,4 +1,3 @@
-#update
 name: Python application
 
 on:
@@ -33,7 +32,8 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: ghcr.io/jordan05/quintoajordan:1.0.0
+        no-cache: true
+        tags: ghcr.io/jordan05/quintoajordan:1.0.1
 
     - name: 🧾 Mostrar variables básicas
       run: |
@@ -72,7 +72,7 @@ jobs:
         script: |
           cd ~/despliegue
           echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u jordan05 --password-stdin
-          docker pull ghcr.io/jordan05/quintoajordan:1.0.0
+          docker pull ghcr.io/jordan05/quintoajordan:1.0.1
           
           docker stack rm jordan || true
           sleep 20
