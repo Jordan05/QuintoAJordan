@@ -22,7 +22,7 @@ services:
         - "traefik.http.routers.jordanapp-secure.tls=true"
         - "traefik.http.routers.jordanapp-secure.tls.certresolver=http"
         - "traefik.http.routers.jordanapp-secure.service=jordanapp"
-        - "traefik.http.services.jordanapp.loadbalancer.server.port=5000"
+        - "traefik.http.services.jordanapp.loadbalancer.server.port=8000"
         - "traefik.docker.network=traefik-public"
     networks:
       - traefik-public
